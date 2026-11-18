@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Green Earth - با هم برای ساختن زمینی پاک‌تر و آینده‌ای سبزتر">
+<title>Green Earth | زمین سبز، آینده روشن</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--green:#16865a;--dark:#102c21;--light:#eaf5ed;--text:#24372d;--muted:#718078;--bg:#f8fbf8;--border:#e5eee7}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:'Vazirmatn',sans-serif;background:var(--bg);color:var(--text);line-height:1.8}
+a{text-decoration:none;color:inherit}button{font-family:inherit;cursor:pointer}
+.container{width:min(1160px,90%);margin:auto}
+header{position:sticky;top:0;z-index:1000;background:#fffffff2;backdrop-filter:blur(15px);border-bottom:1px solid var(--border)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.logo{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:800;color:var(--dark);direction:ltr}
+.logo-icon{background:var(--green);color:white;width:42px;height:42px;border-radius:14px;display:grid;place-items:center;font-size:24px}
+.nav-links{display:flex;gap:25px;list-style:none;font-size:14px;font-weight:500;color:#53635a}
+.nav-links a:hover{color:var(--green)}
+.nav-btn,.btn-primary{background:var(--green);color:white;padding:11px 21px;border-radius:9px;border:0;font-size:13px;transition:.3s}
+.nav-btn:hover,.btn-primary:hover{background:var(--dark)}
+.menu-toggle{display:none;border:0;background:none;font-size:27px;color:var(--dark)}
+.hero{min-height:590px;display:flex;align-items:center;color:white;background:linear-gradient(90deg,rgba(8,35,24,.82),rgba(8,35,24,.35)),url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=2000&q=85') center/cover}
+.hero-content{max-width:680px;padding:100px 0}
+.eyebrow{display:inline-block;padding:7px 16px;background:#ffffff26;border:1px solid #ffffff55;border-radius:30px;font-size:13px;margin-bottom:25px}
+.hero h1{font-size:clamp(38px,6vw,67px);line-height:1.45;font-weight:800;margin-bottom:20px}
+.hero h1 span{color:#9ce3ad}
+.hero p{color:#e0eee4;font-size:16px;max-width:570px;margin-bottom:32px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:13px}
+.btn-primary,.btn-outline{display:inline-block;padding:13px 25px;border-radius:9px;font-size:14px;transition:.3s}
+.btn-primary{background:#52b77a;color:white;border:1px solid #52b77a}
+.btn-primary:hover{background:#258a50}
+.btn-outline{border:1px solid #ffffffa8;color:white;background:transparent}
+.btn-outline:hover{background:white;color:var(--dark)}
+section{padding:90px 0}
+.section-heading{text-align:center;max-width:650px;margin:0 auto 48px}
+.section-heading small,.tag{color:var(--green);font-weight:700;font-size:13px}
+.section-heading h2{color:var(--dark);font-size:32px;margin:8px 0 12px}
+.section-heading p{color:var(--muted);font-size:14px}
+.stats{margin-top:-45px;position:relative;z-index:5}
+.stats-grid{background:white;box-shadow:0 12px 40px #143c2314;border:1px solid var(--border);border-radius:18px;display:grid;grid-template-columns:repeat(4,1fr);padding:30px 15px}
+.stat{text-align:center;border-left:1px solid var(--border)}
+.stat:last-child{border:0}
+.stat h3{color:var(--green);font-size:30px;font-weight:800}
+.stat p{color:var(--muted);font-size:13px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:55px}
+.about-image{position:relative}
+.about-image img{width:100%;height:420px;object-fit:cover;border-radius:20px}
+.image-label{position:absolute;bottom:20px;right:20px;background:white;padding:13px 20px;border-radius:12px;font-weight:700;color:var(--green);box-shadow:0 5px 25px #0002}
+.about-text h2{font-size:34px;color:var(--dark);line-height:1.6;margin:12px 0 20px}
+.about-text p{color:var(--muted);font-size:14px;margin-bottom:20px}
+.check-list{list-style:none;display:grid;gap:12px;margin-top:25px}
+.check-list li{font-size:14px;font-weight:600}
+.check-list li:before{content:"✓";color:var(--green);background:var(--light);padding:3px 8px;border-radius:50%;margin-left:10px}
+.features,.challenge{background:#eff7f0}
+.feature-grid,.articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.feature-card{background:white;padding:30px 25px;border:1px solid var(--border);border-radius:15px;transition:.3s}
+.feature-card:hover,.article-card:hover{transform:translateY(-7px);box-shadow:0 15px 35px #164d2a12}
+.feature-icon{width:55px;height:55px;background:var(--light);border-radius:15px;display:grid;place-items:center;font-size:27px;margin-bottom:20px}
+.feature-card h3{color:var(--dark);font-size:18px;margin-bottom:10px}
+.feature-card p,.article-body p{font-size:13px;color:var(--muted)}
+.article-card{background:white;border:1px solid var(--border);border-radius:15px;overflow:hidden;transition:.3s}
+.article-card img{width:100%;height:210px;object-fit:cover}
+.article-body{padding:22px}
+.article-tag{color:var(--green);font-size:12px;font-weight:700}
+.article-body h3{font-size:17px;color:var(--dark);margin:10px 0}
+.read-more{display:inline-block;color:var(--green);font-size:13px;font-weight:700;margin-top:17px;border:0;background:none}
+.calculator{background:var(--dark);color:white}
+.calculator .section-heading h2{color:white}.calculator .section-heading p{color:#b9c9bf}
+.calculator-box{max-width:720px;margin:auto;background:#ffffff0d;border:1px solid #ffffff20;padding:35px;border-radius:18px}
+.form-group{margin-bottom:23px}.form-group label{display:block;margin-bottom:10px;font-size:14px}
+.form-group input{width:100%;padding:13px;border:1px solid #ffffff30;background:#ffffff12;color:white;border-radius:9px;font-family:inherit;outline:none}
+.calculate-btn{width:100%;padding:14px;background:#53bd7c;color:white;border:0;border-radius:9px;font-size:15px;font-weight:700}
+.result{display:none;margin-top:22px;padding:20px;text-align:center;border:1px solid #75d49a;background:#ffffff12;border-radius:12px}
+.result h3{font-size:28px;color:#83e9a6}.result p{font-size:13px;color:#d3e4d8}
+.challenge-box{max-width:800px;margin:auto;background:white;border:1px solid var(--border);border-radius:18px;padding:35px}
+.challenge-item{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:17px 0;border-bottom:1px solid var(--border)}
+.challenge-item:last-child{border:0}
+.challenge-item strong{font-size:14px}.challenge-item p{color:var(--muted);font-size:12px}
+.done-btn{background:var(--light);color:var(--green);border:0;border-radius:8px;padding:9px 15px;font-weight:700;white-space:nowrap}
+.done-btn.completed{background:var(--green);color:white}
+.points{margin-top:22px;background:var(--light);color:var(--green);padding:16px;border-radius:10px;text-align:center;font-weight:700}
+.cta{text-align:center;background:linear-gradient(#0c382bc9,#0c382bd9),url('https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1800&q=80') center/cover;color:white;padding:85px 20px}
+.cta h2{font-size:35px;margin-bottom:15px}.cta p{color:#e1eee4;margin-bottom:25px}
+footer{background:#0b2118;color:white;padding:60px 0 20px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:35px;padding-bottom:40px}
+footer h3{font-size:18px;margin-bottom:18px}
+footer p,footer a{color:#a9b9af;font-size:13px}
+footer ul{list-style:none;display:grid;gap:10px}
+footer a:hover{color:#73d89a}
+.footer-bottom{border-top:1px solid #ffffff20;text-align:center;padding-top:20px;color:#8ea397;font-size:12px}
+.reveal{opacity:0;transform:translateY(25px);transition:.7s ease}
+.reveal.show{opacity:1;transform:translateY(0)}
+.modal{display:none;position:fixed;inset:0;background:#0009;z-index:2000;align-items:center;justify-content:center;padding:20px}
+.modal.show{display:flex}
+.modal-content{background:white;border-radius:16px;padding:25px;max-width:480px;width:100%;color:var(--text)}
+.modal-content p{color:var(--muted);font-size:14px;line-height:2;margin:15px 0}
+@media(max-width:850px){.nav-links{display:none;position:absolute;top:76px;right:0;width:100%;background:white;flex-direction:column;padding:25px 5%;gap:18px;border-bottom:1px solid var(--border)}.nav-links.active{display:flex}.menu-toggle{display:block}.nav-btn{display:none}.about-grid{grid-template-columns:1fr}.feature-grid,.articles-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:550px){section{padding:65px 0}.hero{min-height:570px}.hero-content{padding:75px 0}.hero h1{font-size:39px}.hero p{font-size:14px}.stats-grid{grid-template-columns:repeat(2,1fr);gap:25px 0}.stat:nth-child(2){border:0}.feature-grid,.articles-grid{grid-template-columns:1fr}.section-heading h2{font-size:26px}.about-text h2{font-size:27px}.calculator-box{padding:22px}.challenge-box{padding:20px}.challenge-item{align-items:flex-start}.footer-grid{grid-template-columns:1fr 1fr;gap:25px 15px}.cta h2{font-size:27px}}
+</style>
+</head>
+<body>
+<header><div class="container nav">
+<a href="#home" class="logo"><span class="logo-icon">🌿</span> GREEN EARTH</a>
+<ul class="nav-links" id="navLinks">
+<li><a href="#home">خانه</a></li><li><a href="#about">درباره ما</a></li><li><a href="#features">فعالیت‌ها</a></li><li><a href="#articles">مقالات</a></li><li><a href="#calculator">محاسبه کربن</a></li><li><a href="#challenge">چالش‌ها</a></li>
+</ul>
+<a class="nav-btn" href="#challenge">به ما بپیوندید</a>
+<button class="menu-toggle" id="menuToggle" aria-label="باز کردن منو">☰</button>
+</div></header>
+<main>
+<section class="hero" id="home"><div class="container"><div class="hero-content">
+<span class="eyebrow">🌍 آینده زمین در دستان ماست</span>
+<h1>زمین سبزتر،<br><span>آینده روشن‌تر</span></h1>
+<p>تغییرات بزرگ با قدم‌های کوچک آغاز می‌شوند. امروز برای حفاظت از طبیعت اقدام کنیم و فردایی بهتر برای نسل‌های آینده بسازیم.</p>
+<div class="hero-actions"><a href="#about" class="btn-primary">درباره Green Earth</a><a href="#features" class="btn-outline">کشف فعالیت‌ها ←</a></div>
+</div></div></section>
+<div class="container stats"><div class="stats-grid reveal">
+<div class="stat"><h3>🌳 ۱۰۰+</h3><p>ایده برای حفاظت از طبیعت</p></div><div class="stat"><h3>♻️ ۵۰+</h3><p>راهکار بازیافت</p></div><div class="stat"><h3>🌱 ۲۰+</h3><p>فعالیت محیط زیستی</p></div><div class="stat"><h3>🌍 ۱</h3><p>زمین برای همه ما</p></div>
+</div></div>
+<section id="about"><div class="container about-grid">
+<div class="about-image reveal"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1000&q=85" alt="جنگل سرسبز"><div class="image-label">🌿 حفاظت از طبیعت</div></div>
+<div class="about-text reveal"><small style="color:var(--green);font-weight:700">درباره ما</small><h2>هر تغییر کوچکی،<br>می‌تواند آینده را تغییر دهد.</h2>
+<p>Green Earth یک پروژه آگاهی‌بخش درباره محیط زیست است. هدف ما افزایش آگاهی درباره مشکلات زیست‌محیطی و معرفی راه‌هایی برای داشتن زمینی سالم‌تر است.</p>
+<p>ما باور داریم که همه افراد می‌توانند با تغییر عادت‌های روزانه خود، نقش مهمی در حفاظت از طبیعت داشته باشند.</p>
+<ul class="check-list"><li>کاهش مصرف پلاستیک</li><li>حفاظت از جنگل‌ها و منابع طبیعی</li><li>صرفه‌جویی در مصرف آب و انرژی</li><li>ترویج سبک زندگی دوستدار محیط زیست</li></ul></div>
+</div></section>
+<section class="features" id="features"><div class="container">
+<div class="section-heading"><small>WHAT WE DO</small><h2>چگونه به زمین کمک کنیم؟</h2><p>با چند عادت ساده می‌توانیم تأثیر مثبتی بر محیط اطراف خود داشته باشیم.</p></div>
+<div class="feature-grid">
+<div class="feature-card reveal"><div class="feature-icon">🌳</div><h3>کاشت درخت</h3><p>درختان به حفظ تنوع زیستی، جذب کربن و بهبود کیفیت هوا کمک می‌کنند.</p></div>
+<div class="feature-card reveal"><div class="feature-icon">♻️</div><h3>بازیافت زباله</h3><p>با جداسازی زباله‌های قابل بازیافت، به کاهش آلودگی و استفاده بهتر از منابع کمک کنیم.</p></div>
+<div class="feature-card reveal"><div class="feature-icon">💧</div><h3>صرفه‌جویی در آب</h3><p>آب یک منبع ارزشمند است. با مصرف درست آن از منابع آبی محافظت کنیم.</p></div>
+<div class="feature-card reveal"><div class="feature-icon">☀️</div><h3>انرژی پاک</h3><p>استفاده از انرژی‌های تجدیدپذیر می‌تواند به کاهش آلودگی کمک کند.</p></div>
+<div class="feature-card reveal"><div class="feature-icon">🚲</div><h3>حمل‌ونقل سبز</h3><p>پیاده‌روی، دوچرخه‌سواری و حمل‌ونقل عمومی انتخاب‌های سازگارتر با محیط زیست هستند.</p></div>
+<div class="feature-card reveal"><div class="feature-icon">🌎</div><h3>آگاهی محیط زیستی</h3><p>دانش خود را افزایش دهیم و دیگران را نیز به مراقبت از طبیعت تشویق کنیم.</p></div>
+</div></div></section>
+<section id="articles"><div class="container">
+<div class="section-heading"><small>GREEN JOURNAL</small><h2>مجله زمین سبز</h2><p>چند موضوع مهم درباره محیط زیست که بهتر است بدانیم.</p></div>
+<div class="articles-grid">
+<article class="article-card reveal"><img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=800&q=80" alt="جنگل"><div class="article-body"><span class="article-tag">طبیعت</span><h3>چرا جنگل‌ها برای زمین مهم هستند؟</h3><p>جنگل‌ها زیستگاه بسیاری از گونه‌ها هستند و نقش مهمی در سلامت زمین دارند.</p><button class="read-more" data-article="forest">ادامه مطلب ←</button></div></article>
+<article class="article-card reveal"><img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=800&q=80" alt="بازیافت"><div class="article-body"><span class="article-tag">بازیافت</span><h3>چگونه زباله کمتری تولید کنیم؟</h3><p>انتخاب محصولات بادوام و استفاده دوباره از وسایل می‌تواند به کاهش زباله کمک کند.</p><button class="read-more" data-article="recycle">ادامه مطلب ←</button></div></article>
+<article class="article-card reveal"><img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80" alt="طبیعت"><div class="article-body"><span class="article-tag">آب‌وهوا</span><h3>تغییرات اقلیمی چیست؟</h3><p>تغییرات اقلیمی بر دما، بارش و اکوسیستم‌های زمین تأثیر می‌گذارند.</p><button class="read-more" data-article="climate">ادامه مطلب ←</button></div></article>
+</div></div></section>
+<section class="calculator" id="calculator"><div class="container">
+<div class="section-heading"><small>CARBON FOOTPRINT</small><h2>ردپای کربن خود را تخمین بزنید</h2><p>با وارد کردن اطلاعات ساده، یک تخمین آموزشی از انتشار کربن فعالیت‌های روزانه خود ببینید.</p></div>
+<div class="calculator-box">
+<div class="form-group"><label for="distance">مسافت رانندگی روزانه (کیلومتر)</label><input id="distance" type="number" min="0" max="500" value="10"></div>
+<div class="form-group"><label for="electric">مصرف برق ماهانه (کیلووات‌ساعت)</label><input id="electric" type="number" min="0" max="5000" value="100"></div>
+<div class="form-group"><label for="flights">تعداد سفرهای هوایی در سال</label><input id="flights" type="number" min="0" max="100" value="0"></div>
+<button class="calculate-btn" id="calculate">محاسبه ردپای کربن</button>
+<div class="result" id="result"><h3 id="total">۰</h3><p>کیلوگرم CO₂ در سال</p><p>این محاسبه تقریبی و آموزشی است و همه منابع انتشار را در نظر نمی‌گیرد.</p></div>
+</div></div></section>
+<section class="challenge" id="challenge"><div class="container">
+<div class="section-heading"><small>TAKE ACTION</small><h2>چالش‌های سبز امروز</h2><p>یک کار کوچک انتخاب کن و امتیاز خودت را جمع کن!</p></div>
+<div class="challenge-box">
+<div class="challenge-item"><div><strong>🚰 کاهش مصرف آب</strong><p>امروز هنگام مسواک زدن شیر آب را ببند.</p></div><button class="done-btn" data-points="10">انجام شد +۱۰</button></div>
+<div class="challenge-item"><div><strong>🛍️ حذف کیسه پلاستیکی</strong><p>از کیسه پارچه‌ای استفاده کن.</p></div><button class="done-btn" data-points="15">انجام شد +۱۵</button></div>
+<div class="challenge-item"><div><strong>💡 صرفه‌جویی برق</strong><p>چراغ‌های اضافی را خاموش کن.</p></div><button class="done-btn" data-points="10">انجام شد +۱۰</button></div>
+<div class="challenge-item"><div><strong>🌱 مراقبت از یک گیاه</strong><p>از یک گیاه یا درخت مراقبت کن.</p></div><button class="done-btn" data-points="20">انجام شد +۲۰</button></div>
+<div class="points">امتیاز شما: <span id="points">۰</span> ⭐</div><p style="text-align:center;font-size:12px;color:var(--muted);margin-top:8px">امتیازها فقط در همین صفحه محاسبه می‌شوند.</p>
+</div></div></section>
+<section class="cta"><div class="container"><h2>آینده زمین به انتخاب امروز ما بستگی دارد.</h2><p>بیایید با هم برای ساختن دنیایی پاک‌تر تلاش کنیم.</p><a href="#challenge" class="btn-primary">از امروز شروع کن</a></div></section>
+</main>
+<footer><div class="container">
+<div class="footer-grid">
+<div><div class="logo" style="color:white;margin-bottom:15px">🌿 GREEN EARTH</div><p>یک قدم برای طبیعت، یک امید برای آینده. با آگاهی و همکاری می‌توانیم زمین بهتری بسازیم.</p></div>
+<div><h3>دسترسی سریع</h3><ul><li><a href="#home">خانه</a></li><li><a href="#about">درباره ما</a></li><li><a href="#features">فعالیت‌ها</a></li></ul></div>
+<div><h3>بخش‌ها</h3><ul><li><a href="#articles">مقالات</a></li><li><a href="#calculator">محاسبه کربن</a></li><li><a href="#challenge">چالش‌ها</a></li></ul></div>
+<div><h3>پیام ما</h3><p>زمین ما، مسئولیت ماست. 🌍</p></div>
+</div><div class="footer-bottom">© 2026 Green Earth — زمین ما، مسئولیت ما 🌱</div>
+</div></footer>
+<div class="modal" id="modal"><div class="modal-content"><div style="display:flex;justify-content:space-between;gap:10px"><h3 id="modal-title"></h3><button id="close-modal" aria-label="بستن">✕</button></div><p id="modal-text"></p><button class="btn-primary" id="close-modal2">متوجه شدم</button></div></div>
+<script>
+const menuToggle=document.getElementById('menuToggle'),navLinks=document.getElementById('navLinks');
+menuToggle.addEventListener('click',()=>navLinks.classList.toggle('active'));
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('active')));
+const articles={
+forest:['اهمیت جنگل‌ها','جنگل‌ها به تنظیم آب‌وهوا، حفظ خاک، جذب دی‌اکسیدکربن و فراهم کردن زیستگاه برای جانوران کمک می‌کنند. حفاظت از جنگل‌ها مسئولیت همه ماست.'],
+recycle:['کاهش زباله','برای کاهش زباله می‌توانیم از وسایل چندبارمصرف استفاده کنیم، خریدهای غیرضروری را کاهش دهیم و کاغذ، شیشه و فلز را جداگانه بازیافت کنیم.'],
+climate:['تغییرات اقلیمی','تغییرات اقلیمی به تغییرات بلندمدت در دمای زمین و الگوهای آب‌وهوایی گفته می‌شود. کاهش مصرف انرژی و استفاده از منابع پاک از راهکارهای مقابله با آن هستند.']
+};
+const modal=document.getElementById('modal');
+document.querySelectorAll('[data-article]').forEach(btn=>btn.addEventListener('click',()=>{
+const article=articles[btn.dataset.article];document.getElementById('modal-title').textContent=article[0];document.getElementById('modal-text').textContent=article[1];modal.classList.add('show');
+}));
+function closeModal(){modal.classList.remove('show')}
+document.getElementById('close-modal').addEventListener('click',closeModal);
+document.getElementById('close-modal2').addEventListener('click',closeModal);
+modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+document.getElementById('calculate').addEventListener('click',()=>{
+const d=Number(document.getElementById('distance').value),e=Number(document.getElementById('electric').value),f=Number(document.getElementById('flights').value);
+if([d,e,f].some(x=>!Number.isFinite(x)||x<0)){alert('لطفاً مقادیر معتبر و غیرمنفی وارد کنید.');return}
+const total=Math.round(d*365*.21+e*12*.4+f*250);
+document.getElementById('total').textContent=total.toLocaleString('fa-IR');
+document.getElementById('result').style.display='block';
+});
+let points=0;
+document.querySelectorAll('[data-points]').forEach(btn=>btn.addEventListener('click',()=>{
+if(btn.classList.contains('completed'))return;
+btn.classList.add('completed');btn.textContent='✓ انجام شد';points+=Number(btn.dataset.points);
+document.getElementById('points').textContent=points.toLocaleString('fa-IR');
+}));
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show');observer.unobserve(entry.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
